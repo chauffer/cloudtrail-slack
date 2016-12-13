@@ -15,6 +15,7 @@
     "lodash": "~3.10.1",
     "lru-cache": "~2.6.5",
     "moment": "~2.10.6",
+    "request": "^2.79.0",
     "slack-node": "~0.1.3"
   }
 }

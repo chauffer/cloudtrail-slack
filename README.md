@@ -1,9 +1,18 @@
 Watch CloudTrail and send notifications of every action to an slack channel.
 
+## Changes from auth0/cloudtrail-slack
+- Docker Support
+- Support for a couple of extra exlusions:
+  - Setting the `IGNORE_ELB_SELF_REGISTRATIONS` env variable will ignore ELB registrations and deregistrations coming from servers (something that can be common with certain Kubernetes versions).
+  - Setting the `IGNORE_ELASTICACHE_SNAPSHOTS` env variable will ignore create or copy snapshot commands.
+  - Setting the `UTC_OFFSET` env variable (in minutes) will allow you to have non-utc timestamps in Slack for Event Time.
+
 ## Installation
 
 ```
-npm i -g auth0/cloudtrail-slack
+git clone https://github.com/robscott/cloudtrail-slack
+cd cloudtrail-slack
+npm install
 ```
 
 ## Usage
@@ -11,10 +20,14 @@ npm i -g auth0/cloudtrail-slack
 Configure a daemon that runs the following command:
 
 ```
-SLACK_WEBHOOK=http://your-slack-webhook \
-	REGIONS=us-west-1,us-east-1
-	cloudtrail-slack
+SLACK_WEBHOOK=https://your-slack-webhook \
+  REGIONS=us-west-1,us-east-1
+  AWS_ACCESS_KEY_ID=access_key_goes_here
+  AWS_SECRET_ACCESS_KEY=secret_access_key_goes_here
+  bin/cloudtrail-slack
 ```
+
+The AWS IAM user you have will need to have `cloudtrail:LookupEvents` access.
 
 ## Issue Reporting
 
@@ -22,7 +35,7 @@ If you have found a bug or if you have a feature request, please report them at 
 
 ## Author
 
-[Auth0](auth0.com)
+[Auth0](auth0.com) with some small modifications by Rob Scott.
 
 ## License
 

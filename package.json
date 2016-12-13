@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "~1.4.0",
-    "aws-sdk": "~2.1.43",
+    "aws-sdk": "^2.7.13",
     "colors": "~1.1.2",
     "lodash": "~3.10.1",
     "lru-cache": "~2.6.5",

@@ -20,11 +20,10 @@ npm install
 Configure a daemon that runs the following command:
 
 ```
-SLACK_WEBHOOK=https://your-slack-webhook \
-  REGIONS=us-west-1,us-east-1
-  AWS_ACCESS_KEY_ID=access_key_goes_here
-  AWS_SECRET_ACCESS_KEY=secret_access_key_goes_here
-  bin/cloudtrail-slack
+docker run --env \
+webhook="https://hooks.slack.com/services/....." \
+--env awsid="..." \
+--env awskey="...." cloudtrail
 ```
 
 The AWS IAM user you have will need to have `cloudtrail:LookupEvents` access.

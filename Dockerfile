@@ -9,4 +9,4 @@ RUN npm install --production
 
 COPY . .
 
-CMD bin/cloudtrail-slack
+CMD SLACK_WEBHOOK=$webhook REGIONS=ap-southeast-2 AWS_ACCESS_KEY_ID=$awsid AWS_SECRET_ACCESS_KEY=$awskey bin/cloudtrail-slack

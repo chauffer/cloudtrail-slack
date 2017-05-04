@@ -23,7 +23,8 @@ Configure a daemon that runs the following command:
 docker run --env \
 webhook="https://hooks.slack.com/services/....." \
 --env awsid="..." \
---env awskey="...." cloudtrail
+--env awskey="...." 
+--env account="awsaccount" cloudtrail
 ```
 
 The AWS IAM user you have will need to have `cloudtrail:LookupEvents` access.

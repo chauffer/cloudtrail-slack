@@ -23,7 +23,7 @@ Configure a daemon that runs the following command:
 docker run --env \
 webhook="https://hooks.slack.com/services/....." \
 --env awsid="..." \
---env awskey="...." 
+--env awskey="...." \
 --env account="awsaccount" cloudtrail
 ```
 

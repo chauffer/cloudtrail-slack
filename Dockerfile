@@ -1,4 +1,4 @@
-FROM node:6.9-alpine
+FROM node:8-alpine
 
 RUN mkdir -p /usr/src/cloudtrail-slack
 WORKDIR /usr/src/cloudtrail-slack
